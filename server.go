@@ -1,10 +1,18 @@
 package main
 
 import (
+	"fmt"
 	"net/http"
+	"os"
 
 	"github.com/chengjoey/web-terminal/views"
 	"github.com/gin-gonic/gin"
+)
+
+var (
+	EnvGOPATH     = os.Getenv("GOPATH")
+	TemplateFiles = fmt.Sprintf("%s/src/github.com/chengjoey/web-terminal/templates/*.html", EnvGOPATH)
+	StaticFiles   = fmt.Sprintf("%s/src/github.com/chengjoey/web-terminal/templates/static", EnvGOPATH)
 )
 
 //对产生的任何error进行处理
@@ -55,8 +63,8 @@ func CORSMiddleware() gin.HandlerFunc {
 
 func main() {
 	server := gin.Default()
-	server.LoadHTMLGlob("./templates/*.html")
-	server.Static("/static", "./templates/static")
+	server.LoadHTMLGlob(TemplateFiles)
+	server.Static("/static", StaticFiles)
 	server.Use(JSONAppErrorReporter())
 	server.Use(CORSMiddleware())
 	server.GET("/", func(c *gin.Context) {

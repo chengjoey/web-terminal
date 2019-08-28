@@ -1,0 +1,5 @@
+.idea
+*.gz
+*.zip
+*.exe
+web-terminal
