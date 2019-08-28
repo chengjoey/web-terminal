@@ -2,6 +2,8 @@
 
 用go和vue实现的简易版的网页版xshell. 前后端分离, [前端地址](https://github.com/chengjoey/web-terminal-client)
 
+[详细介绍](http://www.zchengjoey.com/posts/%E5%9F%BA%E4%BA%8EWeb%E7%9A%84Terminal%E7%BB%88%E7%AB%AF%E6%8E%A7%E5%88%B6%E5%8F%B0%E6%8A%80%E6%9C%AF/)
+
 
 ## Installation
 
