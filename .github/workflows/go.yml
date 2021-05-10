@@ -20,3 +20,13 @@ jobs:
 
     - name: Build
       run: go build -o terminal server.go
+    
+    - name: Scp
+      uses: appleboy/scp-action@master
+      with:
+        host: ${{ secrets.HOST }}
+        username: ${{ secrets.USERNAME }}
+        password: ${{ secrets.PASSWORD }}
+        port: ${{ secrets.PORT }}
+        source: "terminal"
+        target: "/opt/"
